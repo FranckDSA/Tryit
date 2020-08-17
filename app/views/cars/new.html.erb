@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <%= simple_form_for [ @car] do |f| %>
+      <%= simple_form_for [@user, @car] do |f| %>
       <%= f.input :model, placeholder: "Scenic" %>
       <%= f.input :brand, placeholder: "Renault" %>
       <%= f.input :motorizing, placeholder: "2.0 DCi" %>
@@ -10,8 +10,7 @@
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
-
-params.require(:car).permit(:category, :brand, :model, :motorizing, :description, :start_date, :end_time, :user, photos: [])
