@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= simple_form_for [@user, @car] do |f| %>
+      <%= f.input :model, placeholder: "Scenic" %>
+      <%= f.input :brand, placeholder: "Renault" %>
+      <%= f.input :motorizing, placeholder: "2.0 DCi" %>
+      <%= f.input :description, placeholder: "Description of my car" %>
+      <%= f.input :photos, as: :files %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

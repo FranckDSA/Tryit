@@ -56,4 +56,3 @@ CATEGORIES = ["family", "sports", "urban", "vintage"]
   car.save!
 
 end
-
