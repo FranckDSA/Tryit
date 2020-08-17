@@ -34,25 +34,26 @@ CATEGORIES = ["family", "sports", "urban", "vintage"]
   )
 
   p Faker::Avatar.image
-  file = URI.open("#{Faker::Avatar.image}.jpg")
+  file = URI.open(Faker::Avatar.image)
 
   user.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
   user.save!
 
+  brand = Faker::Vehicle.make
 
   car = Car.new(
       category: CATEGORIES.sample,
-      brand: Faker::Vehicle.make,
-      model: Faker::Vehicle.model(make_of_model: :brand),
+      brand: brand,
+      model: Faker::Vehicle.model(make_of_model: brand),
       motorizing: Faker::Vehicle.engine,
       description:Faker::Vehicle.standard_specs,
-      start_date: Date.now,
+      start_date: Date.new,
       end_date: Faker::Date.forward(days: 23),
       user_id: user.id
   )
 
   file_car = URI.open('https://source.unsplash.com/800x450/?car')
-  car.photo.attach(io: file_car, filename: 'car.jpg', content_type: 'image/jpg')
+  car.photos.attach(io: file_car, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
 end
