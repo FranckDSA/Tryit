@@ -1,12 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
   display: flex;
   align-items: center;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-lewagon .brand {
+  display: flex;
+  align-items: flex-end;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -30,7 +40,7 @@
   color: $logo-color;
   margin: 0px;
   padding: 0px;
-  opacity: 70%;
+  opacity: 90%;
 }
 
 .navbar-lewagon a {
@@ -40,7 +50,17 @@
   text-decoration: none;
 }
 
-.navbar-lewagon .brand {
+.navbar-lewagon .cartouche {
+  padding: 5px;
+  border-radius: 30px;
+  border: 1px #666470 solid;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  background-color: white;
+  opacity: 80%;
+}
+
+.navbar-lewagon .cartouche a {
+  color: black;
+  font-style: 16px;
 }
