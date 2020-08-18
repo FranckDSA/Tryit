@@ -9,7 +9,7 @@
       <%= cl_image_tag @car.photos.first.key %>
     </div>
     <div class="car-description">
-      <p> Transmission: Manual - Color: Red - Engine: Diesel</p>
+      <p> <%= @car.description %></p>
       <p><%= @car.motorizing %></p>
     </div>
   </div>
