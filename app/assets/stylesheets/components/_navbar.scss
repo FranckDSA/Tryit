@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,11 +20,27 @@
   padding: 0px;
 }
 
+.navbar-lewagon p {
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .navbar-lewagon .fa-car-side {
   color: $logo-color;
+  margin: 0px;
+  padding: 0px;
+  opacity: 70%;
 }
 
 .navbar-lewagon a {
+  color: $logo-color;
   margin: 0px;
   padding: 0px;
+  text-decoration: none;
+}
+
+.navbar-lewagon .brand {
+  display: flex;
+  align-items: flex-end;
 }
