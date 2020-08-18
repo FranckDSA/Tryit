@@ -1,4 +1,19 @@
-<h1><%= @car.model %></h1>
-
-<p class="card-text"><%= @car.description %></p>
-
+<div class="container">
+  <div class="car-head">
+    <h1><%= @car.brand %> - <%= @car.model %></h1>
+    <h2>Owner: <%= @car.user.first_name %></h2>
+    <p>Localisation: <%= @car.user.address %></p>
+  </div>
+  <div class="photo-description">
+    <div class="car-photo">
+      <%= cl_image_tag @car.photos.first.key %>
+    </div>
+    <div class="car-description">
+      <p> Transmission: Manual - Color: Red - Engine: Diesel</p>
+      <p><%= @car.motorizing %></p>
+    </div>
+  </div>
+  <div class="link">
+    <%= link_to "Book this car", new_car_booking_path(@car) %>
+  </div>
+</div>
