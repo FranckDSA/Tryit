@@ -1,16 +1,15 @@
-<h1>Cars</h1>
-<p><% @cars.each do |car| %></p>
-  <%= car.category %> |  <%= car.brand %> | <%= car.model %>
-
-<% end %>
-
-<div class="container">
-    <div class="cards">
+<div class="cards-list">
+  <div class="cards">
     <% @cars.each do |car|%>
-        <%= link_to car.model, car_path(car), class:"card-category-text" %>
+      <% if car.photos.attached? %>
+        <div class="card" style="background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), url('<%= cl_image_path car.photos.first.key, :cloud_name => "dcbecmbrj", crop: :fill %>')">
+      <% else %>
+        <div class="card">
+      <% end %>
+        <%= link_to car.brand, car_path(car), class: "card-text" %>
+        <p id="card-category"><em><%= car.category %></em></p>
       </div>
     <% end %>
-    </div>
+  </div>
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoibmljb2siLCJhIjoiY2s5azZpeXFjMTA5NTNxcTZ0dmRqYzJ5byJ9.qwSn_A22cNAy65DeZy5Q8g'>
 </div>
-
-<img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoibmljb2siLCJhIjoiY2s5azZpeXFjMTA5NTNxcTZ0dmRqYzJ5byJ9.qwSn_A22cNAy65DeZy5Q8g'>
