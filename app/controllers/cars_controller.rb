@@ -1,6 +1,11 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
+    if params[:category].present?
+      @cars = @cars.select { |car| car.category.start_with?(params[:category])}
+    else
+      @cars = Car.all
+    end
   end
 
   def show
