@@ -16,7 +16,7 @@
   <div class="row">
     <div class="card-search">
       <%= simple_form_for :car, url: cars_path, method: "GET" do |f| %>
-        <%= f.select :category, options_for_select(["family", "sports", "urban", "vintage"]), class: "card-search-selection"%>
+        <%= f.select :category, options_for_select(["Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
         <%= f.submit "Search", class: "btn btn-light" %>
       <% end %>
     </div>
