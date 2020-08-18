@@ -7,9 +7,21 @@
         <div class="card">
       <% end %>
         <%= link_to car.brand, car_path(car), class: "card-text" %>
-        <p id="card-category"><em><%= car.category %></em></p>
+        <% case car.category %>
+        <% when "Family" %>
+          <p class="card-category" id="family"><em><%= car.category %></em></p>
+        <% when "Sports" %>
+          <p class="card-category" id="sports"><em><%= car.category %></em></p>
+        <% when "Urban" %>
+          <p class="card-category" id="urban"><em><%= car.category %></em></p>
+        <% when "Vintage" %>
+          <p class="card-category" id="vintage"><em><%= car.category %></em></p>
+        <% when "Exotic" %>
+          <p class="card-category" id="exotic"><em><%= car.category %></em></p>
+        <% end %>
       </div>
     <% end %>
   </div>
-  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoibmljb2siLCJhIjoiY2s5azZpeXFjMTA5NTNxcTZ0dmRqYzJ5byJ9.qwSn_A22cNAy65DeZy5Q8g'>
+  <div id="map">
+</div>
 </div>

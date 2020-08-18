@@ -15,9 +15,9 @@ Car.destroy_all
 User.destroy_all
 Booking.destroy_all
 
-CATEGORIES = ["family", "sports", "urban", "vintage"]
+CATEGORIES = ["Family", "Sports", "Urban", "Vintage", "Exotic"]
 
-10.times do
+12.times do
 
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -46,14 +46,30 @@ CATEGORIES = ["family", "sports", "urban", "vintage"]
       brand: brand,
       model: Faker::Vehicle.model(make_of_model: brand),
       motorizing: Faker::Vehicle.engine,
-      description:Faker::Vehicle.standard_specs,
+      description:Faker::Vehicle.standard_specs.join(" | "),
       start_date: Date.new,
       end_date: Faker::Date.forward(days: 23),
       user_id: user.id
   )
 
-  file_car = URI.open('https://source.unsplash.com/800x450/?car')
-  car.photos.attach(io: file_car, filename: 'car.jpg', content_type: 'image/jpg')
+  file_car1 = URI.open('https://source.unsplash.com/800x450/?car')
+  car.photos.attach(io: file_car1, filename: 'car.jpg', content_type: 'image/jpg')
+  car.save!
+
+  file_car2 = URI.open('https://source.unsplash.com/800x450/?auto')
+  car.photos.attach(io: file_car2, filename: 'car.jpg', content_type: 'image/jpg')
+  car.save!
+
+  file_car3 = URI.open('https://source.unsplash.com/800x450/?voiture')
+  car.photos.attach(io: file_car3, filename: 'car.jpg', content_type: 'image/jpg')
+  car.save!
+
+  file_car4 = URI.open('https://source.unsplash.com/800x450/?road')
+  car.photos.attach(io: file_car4, filename: 'car.jpg', content_type: 'image/jpg')
+  car.save!
+
+  file_car5 = URI.open('https://source.unsplash.com/800x450/?garage')
+  car.photos.attach(io: file_car5, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
 end

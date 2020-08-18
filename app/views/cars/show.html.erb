@@ -1,19 +1,46 @@
-<div class="container">
-  <div class="car-head">
+<div class="container p-3">
+  <div class="card-title">
     <h1><%= @car.brand %> - <%= @car.model %></h1>
-    <h2>Owner: <%= @car.user.first_name %></h2>
-    <p>Localisation: <%= @car.user.address %></p>
+    <p><%= @car.user.address %></p>
   </div>
   <div class="photo-description">
-    <div class="car-photo">
-      <%= cl_image_tag @car.photos.first.key %>
+      <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
+      <div id="photos">
+
+      </div>
+  </div>
+  <div class="description">
+    <div class="car-description py-3">
+      <div class="owner">
+        <div class="owner-name">
+        <h2><%= @car.user.first_name%> <%= @car.user.last_name %></h2>
+        <p><%= @car.user.email %></p>
+        <p><%= @car.user.phone_number %></p>
+        </div>
+        <p><%= cl_image_tag @car.user.photo.key, class: "avatar-user" %></p>
+      </div>
+      <div class="infos p-3">
+        <div class="d-flex justify-content-start align-items-baseline">
+          <i class="fas fa-car-alt"></i><p class="px-3"><%= @car.model %> - <%= @car.brand %></p>
+        </div>
+        <div class="d-flex justify-content-start align-items-baseline">
+        <i class="fas fa-cogs"></i><p class="px-3"><%= @car.motorizing %></p>
+        </div>
+      </div>
+      <div class="description py-3">
+        <p><%= @car.description %></p>
+      </div>
     </div>
-    <div class="car-description">
-      <p> Transmission: Manual - Color: Red - Engine: Diesel</p>
-      <p><%= @car.motorizing %></p>
+
+    <div class="car-booking">
+      <%= link_to "Book this car", new_car_booking_path(@car) %>
     </div>
   </div>
-  <div class="link">
-    <%= link_to "Book this car", new_car_booking_path(@car) %>
-  </div>
+
+
 </div>
+
+<!-- <h2>Owner: <%= @car.user.first_name %></h2>
+
+
+ -->

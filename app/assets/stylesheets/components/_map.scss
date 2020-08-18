@@ -1,6 +1,7 @@
 #map {
-  height: 100vh;
-  margin: 10px;
+  height: calc(100vh - 100px);
+  width: 600px;
   position: sticky;
+  margin-left: 20px;
   top: 0;
 }

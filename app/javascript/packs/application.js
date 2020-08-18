@@ -24,13 +24,20 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { createMap } from '../components/map'
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
+
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+
+  createMap();
+
 });
+
