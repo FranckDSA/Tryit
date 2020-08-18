@@ -7,11 +7,30 @@
   font-weight: bold;
 }
 
+.photo-description {
+  display: flex;
+}
 
 .car-photo {
-  border-radius: 15px;
-  width: 60%;
+  border-radius: 10px;
+  width: 50%;
 }
+
+#photos {
+  width: 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  grid-gap: 13px;
+  padding-left: 13px;
+}
+
+.car-photos {
+  border-radius: 10px;
+  background-size: cover;
+  height: 48%;
+}
+
 
 .owner {
   display: flex;
@@ -32,7 +51,7 @@ h2 {
 }
 
 .car-description {
-  width: 60%;
+  width: 50%;
 }
 
 .infos {
@@ -43,3 +62,4 @@ h2 {
 .car-booking {
   background-color: white;
 }
+

@@ -3,10 +3,17 @@
     <h1><%= @car.brand %> - <%= @car.model %></h1>
     <p><%= @car.user.address %></p>
   </div>
-  <div class="photo-description">
+  <div class="photo-description d-flex">
       <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
       <div id="photos">
-
+       <!--  <p class="car-photos">Hello</p>
+        <p class="car-photos">Hello</p>
+        <p class="car-photos">Hello</p>
+        <p class="car-photos">Hello</p> -->
+        <%= cl_image_tag @car.photos.second.key, class: "car-photos" %>
+        <%= cl_image_tag @car.photos.third.key, class: "car-photos" %>
+        <%= cl_image_tag @car.photos.fourth.key, class: "car-photos" %>
+        <%= cl_image_tag @car.photos.fifth.key, class: "car-photos" %>
       </div>
   </div>
   <div class="description">
