@@ -8,6 +8,12 @@
 
 .navbar-lewagon-white {
   background-color: white;
+  a {
+    color: $logo-color !important;
+  }
+  .fa-car-side {
+    color: $logo-color;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,11 +30,17 @@
 }
 
 .navbar-lewagon h1 {
-  color: $logo-color;
+  color: white;
   font-weight: bold;
   margin: 0px;
   padding: 0px;
 }
+
+// .navbar-lewagon h1 {
+//   color: $logo-color;
+// }
+
+
 
 .navbar-lewagon p {
   margin: 0px;
@@ -37,17 +49,22 @@
 
 
 .navbar-lewagon .fa-car-side {
-  color: $logo-color;
+  color: white;
   margin: 0px;
   padding: 0px;
   opacity: 90%;
+  font-size: 32px;
 }
 
 .navbar-lewagon a {
-  color: $logo-color;
+  color: white;
   margin: 0px;
   padding: 0px;
   text-decoration: none;
+}
+
+.navbar-lewagon a .couleur{
+  color: $logo-color;
 }
 
 .navbar-lewagon .cartouche {

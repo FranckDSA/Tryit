@@ -1,0 +1,63 @@
+.navbar-lewagon-fixed {
+  justify-content: space-between;
+  background: white;
+  display: flex;
+  align-items: center;
+  transition: 0.5s background-color ease;
+}
+
+
+.navbar-lewagon-fixed .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon-fixed .brand {
+  display: flex;
+  align-items: flex-end;
+}
+
+.navbar-lewagon-fixed .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-lewagon-fixed h1 {
+  color: $logo-color;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar-lewagon-fixed p {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.navbar-lewagon-fixed .fa-car-side {
+  color: $logo-color;
+  margin: 0px;
+  padding: 0px;
+  opacity: 90%;
+}
+
+.navbar-lewagon-fixed a {
+  color: $logo-color;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.navbar-lewagon-fixed .cartouche {
+  padding: 5px;
+  border-radius: 30px;
+  border: 1px #666470 solid;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  opacity: 80%;
+}
+
+.navbar-lewagon-fixed .cartouche a {
+  color: black;
+  font-style: 16px;
+}
