@@ -10,3 +10,19 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-lewagon h1 {
+  color: $logo-color;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar-lewagon .fa-car-side {
+  color: $logo-color;
+}
+
+.navbar-lewagon a {
+  margin: 0px;
+  padding: 0px;
+}
