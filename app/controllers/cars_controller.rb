@@ -1,12 +1,19 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = Car.geocoded
     if params[:car][:category].present?
       @cars = @cars.select { |car| car.category.start_with?(params[:car][:category])}
     elsif params[:car][:model].present?
       @cars = @cars.select { |car| car.category.start_with?(params[:car][:model])}
     else
       @cars = Car.all
+    end
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+      }
     end
   end
 
