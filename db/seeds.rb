@@ -42,7 +42,7 @@ CATEGORIES = ["Family", "Sports", "Urban", "Vintage", "Exotic"]
   brand = Faker::Vehicle.make
 
   car = Car.new(
-      category: CATEGORIES.sample,
+      category: "Family",
       brand: brand,
       model: Faker::Vehicle.model(make_of_model: brand),
       motorizing: Faker::Vehicle.engine,
