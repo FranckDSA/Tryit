@@ -41,8 +41,8 @@ categories.each do |category|
 
   brand = Faker::Vehicle.make
 
-  p car = Car.new(
-      category: category,
+  car = Car.new(
+      category: "Sports",
       brand: brand,
       model: Faker::Vehicle.model(make_of_model: brand),
       motorizing: Faker::Vehicle.engine,
