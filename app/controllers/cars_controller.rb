@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = Car.geocoded
     if params[:car][:category].present?
       @cars = @cars.select { |car| car.category.start_with?(params[:car][:category])}
     elsif params[:car][:model].present?
@@ -8,12 +8,10 @@ class CarsController < ApplicationController
     else
       @cars = Car.all
     end
-
-    @cars = Car.geocoded # returns flats with coordinates
-    @markers = @cars.map do |flat|
+    @markers = @cars.map do |car|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: car.latitude,
+        lng: car.longitude,
       }
     end
   end
