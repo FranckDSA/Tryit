@@ -20,7 +20,7 @@ categories = ["Family", "Sports", "Urban", "Vintage", "Exotic"]
 addresses = [
 "14 Rue Fagon, 75013 Paris",
 "16 Villa Gaudelet, 75011 Paris",
-"Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+"5 Avenue Anatole France, 75007 Paris",
 "24 Rue du Commandant Guilbaud, 75016 Paris",
 "Rue de Rivoli, 75001 Paris",
 "47 Rue de Babylone, 75007 Paris",
@@ -32,7 +32,8 @@ addresses = [
 "38 Rue Saint-Maur, 75011 Paris",
 "Place de la Nation, 75011 Paris",
 "Place du Panthéon, 75005 Paris",
-"Avenue de Paris, 94300 Vincennes"
+"Avenue de Paris, 94300 Vincennes",
+"10 Boulevard Montmartre, 75009 Paris"
 ]
 
 

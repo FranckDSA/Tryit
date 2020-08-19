@@ -12,7 +12,8 @@ class CarsController < ApplicationController
       {
         lat: car.latitude,
         lng: car.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+        image_url: helpers.asset_url('https://lh3.googleusercontent.com/dtFuCbfBxODq263Ramrmu-7jXxjsdL2YdyXA243PtwLr2U5xOAaUi63FwSgDRKuNTXCyPEyghjW-D2EVlfjnp4HU')
       }
     end
   end
