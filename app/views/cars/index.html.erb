@@ -3,11 +3,11 @@
 <div class="cards-list">
   <div class="cards">
     <% @cars.each do |car|%>
-      <% if car.photos.attached? %>
+      <%# if car.photos.attached? %>
         <div class="card" style="background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), url('<%= cl_image_path car.photos.first.key, :cloud_name => "dcbecmbrj", crop: :fill %>')">
-      <% else %>
-        <div class="card">
-      <% end %>
+      <%# else %>
+        <!-- <div class="card"> -->
+      <%# end %>
         <%= link_to car.brand, car_path(car), class: "card-text" %>
         <% case car.category %>
         <% when "Family" %>
