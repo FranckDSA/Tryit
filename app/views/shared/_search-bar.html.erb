@@ -14,10 +14,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="card-search">
+    <div class="search-bar">
       <%= simple_form_for :car, url: cars_path, method: "GET" do |f| %>
         <%= f.select :category, options_for_select(["Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
-        <%= f.submit "Search", class: "btn btn-light" %>
+        <%= f.submit "Search", class: "button-search" %>
       <% end %>
     </div>
   </div>

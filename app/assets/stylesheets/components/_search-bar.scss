@@ -1,0 +1,31 @@
+.search-bar {
+  padding: 5px;
+  border-radius: 20px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255,0.8);
+  border: 1px rgba(200, 200, 200,0.1) solid;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar .button-search {
+  border-radius: 20px;
+  background-color: $logo-color;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border-color: none;
+  margin: 0px 10px;
+}
+
+.search-bar #car_category {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255,0.9);
+  color: $logo-color;
+  font-weight: 700;
+  border-color: white;
+  margin: 0px 10px;
+  padding: 5px;
+}

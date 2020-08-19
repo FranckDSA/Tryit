@@ -3,7 +3,7 @@
   background: transparent;
   display: flex;
   align-items: center;
-  transition: 0.5s background-color ease;
+  transition: 1s background-color ease;
 }
 
 .navbar-lewagon-white {
@@ -14,6 +14,19 @@
   .fa-car-side {
     color: $logo-color;
   }
+  .cartouche {
+    border: 2px $logo-color solid !important;
+    background-color: white;
+
+  }
+  .nav-item .fa-sign-in-alt {
+    color: $logo-color;
+  }
+
+  .nav-item .fa-solar-panel {
+    color: $logo-color;
+  }
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,6 +36,12 @@
 .navbar-lewagon .brand {
   display: flex;
   align-items: flex-end;
+  &:hover {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+}
+.navbar-lewagon .brand a:hover {
+  text-decoration: none;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -56,6 +75,10 @@
   font-size: 32px;
 }
 
+.fa-car-side:hover {
+  text-decoration: none;
+}
+
 .navbar-lewagon a {
   color: white;
   margin: 0px;
@@ -63,21 +86,47 @@
   text-decoration: none;
 }
 
-.navbar-lewagon a .couleur{
-  color: $logo-color;
-}
 
 .navbar-lewagon .cartouche {
   padding: 5px;
   border-radius: 30px;
-  border: 1px #666470 solid;
   display: flex;
   align-items: center;
-  background-color: white;
-  opacity: 80%;
+  border: 2px white solid;
+  //background-color: white;
 }
 
 .navbar-lewagon .cartouche a {
   color: black;
   font-style: 16px;
+  text-decoration: none !important;
+}
+
+.navbar-lewagon .dropdown-menu {
+border-radius: 8px;
+border-color: white;
+margin: 10px;
+opacity: 90%;
+font-size: 12px;
+font-weight: lighter;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  a {
+      padding: 5px;
+      font-size: 14px;
+      font-weight: bolder;
+  }
+}
+
+.navbar-lewagon .nav-item .fa-sign-in-alt {
+  margin: 0px 5px;
+  color: white;
+  padding: 0px;
+  font-size: 36px;
+}
+
+.navbar-lewagon .nav-item .fa-solar-panel {
+  margin: 0px 10px;
+  color: white;
+  padding: 0px;
+  font-size: 25px;
 }
