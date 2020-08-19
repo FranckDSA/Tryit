@@ -12,9 +12,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car = @car
     if @booking.save
-      redirect_to car_path(@car)
+      redirect_to car_path(@car), notice: "You booked this car !"
     else
-      render :new
+      render :new, alert: "Error !"
     end
   end
 
