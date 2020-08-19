@@ -3,7 +3,7 @@
 <div class="container p-3">
   <div class="card-title">
     <h1><%= @car.brand %> - <%= @car.model %></h1>
-    <p><%= @car.user.address %></p>
+    <p><%= @car.address %></p>
   </div>
   <div class="photo-description d-flex">
       <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
