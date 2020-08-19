@@ -94,7 +94,6 @@ addresses = [
   car.photos.attach(io: file_car5, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 end
-end
 
 # categories.each do |category|
 
