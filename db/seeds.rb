@@ -29,7 +29,6 @@ CATEGORIES = ["Family", "Sports", "Urban", "Vintage", "Exotic"]
     username: user_name,
     phone_number: Faker::PhoneNumber.phone_number,
     email: "#{first_name.downcase}.#{last_name.downcase}@gmail.com",
-    address: Faker::Address.full_address,
     password: '123456'
   )
 

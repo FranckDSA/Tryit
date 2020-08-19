@@ -8,6 +8,14 @@ class CarsController < ApplicationController
     else
       @cars = Car.all
     end
+
+    @cars = Car.geocoded # returns flats with coordinates
+    @markers = @cars.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
