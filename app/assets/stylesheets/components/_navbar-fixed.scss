@@ -14,6 +14,9 @@
 .navbar-lewagon-fixed .brand {
   display: flex;
   align-items: flex-end;
+    &:hover {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
 }
 
 .navbar-lewagon-fixed .navbar-brand img {
@@ -47,17 +50,47 @@
   text-decoration: none;
 }
 
+
 .navbar-lewagon-fixed .cartouche {
   padding: 5px;
   border-radius: 30px;
-  border: 1px #666470 solid;
   display: flex;
   align-items: center;
   background-color: white;
-  opacity: 80%;
+  border: 2px $logo-color solid;
 }
 
 .navbar-lewagon-fixed .cartouche a {
   color: black;
   font-style: 16px;
+  text-decoration: none !important;
+}
+
+.navbar-lewagon-fixed .dropdown-menu {
+border-radius: 8px;
+border-color: white;
+margin: 10px;
+opacity: 90%;
+font-size: 12px;
+font-weight: lighter;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  a {
+      padding: 5px;
+      font-size: 14px;
+      font-weight: bolder;
+  }
+}
+
+.navbar-lewagon-fixed .nav-item .fa-sign-in-alt {
+  margin: 0px 5px;
+  color: $logo-color;
+  padding: 0px;
+  font-size: 36px;
+}
+
+.navbar-lewagon-fixed .nav-item .fa-solar-panel {
+  margin: 0px 10px;
+  color: $logo-color;
+  padding: 0px;
+  font-size: 25px;
 }
