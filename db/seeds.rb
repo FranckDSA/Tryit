@@ -11,9 +11,13 @@ require 'date'
 
 Faker::Config.locale = :fr
 
+puts "Destroying tables...."
+
 Car.destroy_all
 User.destroy_all
 Booking.destroy_all
+
+puts "Starting a new game..."
 
 categories = ["Family", "Sports", "Urban", "Vintage", "Exotic"]
 
@@ -22,7 +26,7 @@ addresses = [
 "16 Villa Gaudelet, 75011 Paris",
 "5 Avenue Anatole France, 75007 Paris",
 "24 Rue du Commandant Guilbaud, 75016 Paris",
-"Rue de Rivoli, 75001 Paris",
+"12 Rue de Rivoli, 75001 Paris",
 "47 Rue de Babylone, 75007 Paris",
 "13 Avenue du Président Wilson, 75116 Paris",
 "158 Boulevard Haussmann, 75008 Paris",
@@ -33,19 +37,35 @@ addresses = [
 "Place de la Nation, 75011 Paris",
 "Place du Panthéon, 75005 Paris",
 "Avenue de Paris, 94300 Vincennes",
-"10 Boulevard Montmartre, 75009 Paris"
+"10 Boulevard Montmartre, 75009 Paris",
+"1 Avenue Claude Vellefaux, 75010 Paris",
+"48 Bd Sérurier, 75019 Paris",
+"200 Quai de Valmy, 75010 Paris",
+"53 Avenue des Terroirs de France, 75012 Paris",
+"5 Rue Thomas Mann, 75013 Paris",
+"15 Avenue de Choisy, 75013 Paris",
+"61 Rue de l'Amiral Mouchez, 75013 Paris",
+"2 Place Jacques Marette, 75015 Paris",
+"170 Place de la Bataille de Stalingrad, 92130 Issy-les-Moulineaux",
+"53 Rue de la Saussière, 92100 Boulogne-Billancourt",
+"2 Rue Louis Boilly, 75016 Paris",
+"75 Avenue des Champs-Élysées, 75008 Paris",
+"16 Rue Chaptal, 75009 Paris",
+"14 Bis Rue Sainte-Isaure, 75018 Paris"
 ]
 
 
-# A MODIFIER AVEC LE VRAI SEED!!!!!!!!!!!!!!!!
+categories.each do |category|
 
-12.times do
+6.times do
+
+  puts "Je demande un P..."
 
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   user_name = "#{first_name.gsub(/\s+/, "").downcase}_#{last_name.gsub(/\s+/, "").downcase}"
 
-  p user = User.new(
+  user = User.new(
     first_name: first_name || 'jean',
     last_name: last_name || 'michel',
     username: user_name,
@@ -59,10 +79,16 @@ addresses = [
   user.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
   user.save!
 
+  puts "Je demande un A..."
+
   brand = Faker::Vehicle.make
 
-  p car = Car.new(
-      category: "Sports",
+  puts "... et je crée une nouvelle voiture : #{brand}"
+
+  price = rand(10000...50000)
+
+  car = Car.new(
+      category: category,
       brand: brand,
       model: Faker::Vehicle.model(make_of_model: brand),
       motorizing: Faker::Vehicle.engine,
@@ -70,90 +96,45 @@ addresses = [
       address: addresses[0],
       start_date: Date.new,
       end_date: Faker::Date.forward(days: 23),
-      user_id: user.id
+      user_id: user.id,
+      sell_price: price,
+      daily_rent_price: (price*0.01).round
   )
 
   addresses.delete_at(0)
+
+  puts "Je demande un R..."
 
   file_car1 = URI.open('https://source.unsplash.com/800x450/?car')
   car.photos.attach(io: file_car1, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
+  puts "Je demande un I..."
+
   file_car2 = URI.open('https://source.unsplash.com/800x450/?auto')
   car.photos.attach(io: file_car2, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
+
+  puts "Je demande un S..."
 
   file_car3 = URI.open('https://source.unsplash.com/800x450/?voiture')
   car.photos.attach(io: file_car3, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
+  puts "PARIS"
+
   file_car4 = URI.open('https://source.unsplash.com/800x450/?road')
   car.photos.attach(io: file_car4, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
+  puts "PARIS"
+
   file_car5 = URI.open('https://source.unsplash.com/800x450/?garage')
   car.photos.attach(io: file_car5, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
+
+  puts "Allez Paris!!!!!! Oui monsieur....."
+  end
 end
-
-# categories.each do |category|
-
-# 3.times do
-
-#   first_name = Faker::Name.first_name
-#   last_name = Faker::Name.last_name
-#   user_name = "#{first_name.gsub(/\s+/, "").downcase}_#{last_name.gsub(/\s+/, "").downcase}"
-
-#   p user = User.new(
-#     first_name: first_name || 'jean',
-#     last_name: last_name || 'michel',
-#     username: user_name,
-#     phone_number: Faker::PhoneNumber.phone_number,
-#     email: "#{first_name.gsub(/\s+/, "").downcase}.#{last_name.gsub(/\s+/, "").downcase}@gmail.com",
-#     password: '123456'
-#   )
-
-#   file = URI.open(Faker::Avatar.image)
-
-#   user.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-#   user.save!
-
-#   brand = Faker::Vehicle.make
-
-#   p car = Car.new(
-#       category: category,
-#       brand: brand,
-#       model: Faker::Vehicle.model(make_of_model: brand),
-#       motorizing: Faker::Vehicle.engine,
-#       description:Faker::Vehicle.standard_specs.join(" | "),
-#       address: addresses[0],
-#       start_date: Date.new,
-#       end_date: Faker::Date.forward(days: 23),
-#       user_id: user.id
-#   )
-
-#   addresses.delete_at(0)
-
-#   file_car1 = URI.open('https://source.unsplash.com/800x450/?car')
-#   car.photos.attach(io: file_car1, filename: 'car.jpg', content_type: 'image/jpg')
-#   car.save!
-
-#   file_car2 = URI.open('https://source.unsplash.com/800x450/?auto')
-#   car.photos.attach(io: file_car2, filename: 'car.jpg', content_type: 'image/jpg')
-#   car.save!
-
-#   file_car3 = URI.open('https://source.unsplash.com/800x450/?voiture')
-#   car.photos.attach(io: file_car3, filename: 'car.jpg', content_type: 'image/jpg')
-#   car.save!
-
-#   file_car4 = URI.open('https://source.unsplash.com/800x450/?road')
-#   car.photos.attach(io: file_car4, filename: 'car.jpg', content_type: 'image/jpg')
-#   car.save!
-
-#   file_car5 = URI.open('https://source.unsplash.com/800x450/?garage')
-#   car.photos.attach(io: file_car5, filename: 'car.jpg', content_type: 'image/jpg')
-#   car.save!
-# end
-# end
 
 
