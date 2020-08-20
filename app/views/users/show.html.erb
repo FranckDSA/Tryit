@@ -1,44 +1,68 @@
 <%= render 'shared/navbar-fixed' %>
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="user">
-      <p><%= cl_image_tag @user.photo.key, class: "avatar-user" %></p>
-      <h1><%= @user.first_name %></h1>
-      <h2><%= @user.email %></h2>
-      <h4><%= @user.phone_number %></h4>
-    </div>
-    <% if @user.cars.presence %>
-    <div class="cars">
-      <h1>Your cars:</h1>
-      <% @cars.each do |car| %>
-      <div class="card-dashboard" style="width: 18rem;">
-        <p><%= cl_image_tag car.photos.first.key, width: 200 %></p>
-        <div class="card-body">
-          <h5 class="card-title"> <%= car.model %></h5>
-          <p class="card-text"><%= car.brand %></p>
-          <%= link_to "Edit the car infos", edit_user_car_path(car), class: "btn btn-primary" %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-    <% if @user.bookings.presence %>
-    <div class="bookings">
-      <h1>Your bookings:</h1>
-      <% @bookings.each do |book| %>
-      <div class="card-booking" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= book.car.model %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= book.car.brand %></h6>
-          <p class="card-text">Owner: <%= book.car.user.first_name %></p>
-          <%= link_to "The car", car_path(book.car), class: "btn btn-primary" %>
-          <%= link_to "Look the booking", car_booking_path(book), class: "btn btn-primary" %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <% else %>
-      <h6><em>You have no reservations yet</em></h6>
-    <% end %>
-  </div>
+
+<div class="banner-dashboard">
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+      <div class="head">
+        <h1>MY DASBOARD :</h1>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <div class="user">
+          <p><%= cl_image_tag @user.photo.key, class: "avatar-user" %></p>
+          <h1><%= @user.first_name %></h1>
+          <h2><%= @user.email %></h2>
+          <h4><%= @user.phone_number %></h4>
+        </div>
+        <% if @user.cars.presence %>
+        <div class="cars">
+          <h1>Your cars:</h1>
+          <%= @user.cars.size %>
+          <% @cars.each do |car| %>
+          <div class="card-dashboard" style="width: 18rem;">
+            <p><%= cl_image_tag car.photos.first.key, width: 200 %></p>
+            <div class="card-body">
+              <h5 class="card-title"> <%= car.model %></h5>
+              <p class="card-text"><%= car.brand %></p>
+              <%= link_to "Edit the car infos", edit_user_car_path(car), class: "btn btn-primary" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+        <% if @user.bookings.presence %>
+        <div class="bookings">
+          <h1>Your bookings:</h1>
+          <% @bookings.each do |book| %>
+          <div class="card-booking" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= book.car.model %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= book.car.brand %></h6>
+              <p class="card-text">Owner: <%= book.car.user.first_name %></p>
+              <%= link_to "The car", car_path(book.car), class: "btn btn-primary" %>
+              <%= link_to "Look the booking", car_booking_path(book), class: "btn btn-primary" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% else %>
+          <h6><em>You have no reservations yet</em></h6>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
