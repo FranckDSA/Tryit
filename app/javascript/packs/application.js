@@ -32,6 +32,7 @@ import { datepicker } from '../plugins/flatpickr';
 import { initMapbox } from '../plugins/init_mapbox';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -39,5 +40,6 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   initMapbox();
   datepicker();
+  initAutocomplete();
 });
 
