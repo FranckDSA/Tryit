@@ -23,7 +23,15 @@
               <p class="card-category" id="exotic"><em><%= car.category %></em></p>
             <% end %>
           <div class="price">
-            <p><%= car.daily_rent_price %>€ / day</p>
+            <p><%= car.daily_rent_price %>€ / hour</p>
+          </div>
+          <div class="rating">
+              <% @average_rating.to_i.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - @average_rating.to_i).times do %>
+                <i class="far fa-star"></i>
+              <% end %><em>
           </div>
         </div>
     <% end %>

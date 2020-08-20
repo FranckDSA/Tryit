@@ -33,6 +33,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { dynamicRating } from "../plugins/starsInReviewForm";
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -41,5 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   datepicker();
   initAutocomplete();
+  dynamicRating();
 });
 

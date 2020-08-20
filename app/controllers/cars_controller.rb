@@ -39,6 +39,8 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
+    @reviews = @car.reviews
+    @average_rating = @reviews.average(:rating)
   end
 
   def new

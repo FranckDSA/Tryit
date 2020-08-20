@@ -113,7 +113,7 @@ categories.each do |category|
       end_date: Faker::Date.forward(days: 23),
       user_id: user.id,
       sell_price: price,
-      daily_rent_price: (price*0.01).round
+      daily_rent_price: (price*0.005).round
   )
 
   addresses.delete_at(0)

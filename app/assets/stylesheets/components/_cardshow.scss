@@ -21,9 +21,6 @@
 .test {
   display: grid;
   grid-template-columns:  50px 50px 50px 50px;
-  // flex-grow: 1;
-  // grid-gap: 13px;
-  // padding-left: 13px;
   grid-template-rows: auto;
   grid-template-areas:
     "photo1 photo1 photo2 photo3"
@@ -31,14 +28,22 @@
 }
 
 
-
 .card-title {
   font-size: 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .card-title h1 {
   font-size: 24px;
   font-weight: bold;
+}
+
+.card-rating h3 {
+  font-size: 20px;
 }
 
 .photo-description {
@@ -98,4 +103,20 @@ h2 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.reviews {
+  margin: 20px 100px;
+  padding: 10px;
+  background-color: white;
+}
+
+.review p {
+  text-align:left;
+  align-items: center;
+  font-size: 15px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+
 

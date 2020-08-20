@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:car_id])
     @review = Review.new
     # @start = DateTime.strptime(@booking.start_time, "%Y-%m-%d %H:%M:%S")
     # @end = DateTime.strptime(@booking.end_time, "%Y-%m-%d %H:%M:%S")
