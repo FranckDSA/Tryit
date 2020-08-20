@@ -21,6 +21,10 @@
         <% when "Exotic" %>
           <p class="card-category" id="exotic"><em><%= car.category %></em></p>
         <% end %>
+        <div class="price">
+          <p><%= car.daily_rent_price %>€ / day</p>
+        </div>
+
       </div>
     <% end %>
   </div>
