@@ -51,6 +51,7 @@
 }
 
 #photos {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex-grow: 1;
