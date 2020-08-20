@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @car = Car.find(params[:car_id])
+
     @booking.user = current_user
     @booking.car = @car
     if @booking.save
