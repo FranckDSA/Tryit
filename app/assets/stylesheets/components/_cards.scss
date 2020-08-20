@@ -108,7 +108,7 @@
   padding: 4px;
   margin: 0px;
   border-radius: 2px;
-  background-color: rgba(0,0,0,0.4)
+  border: 0.3px solid white;
 }
 
 .price p {
@@ -119,5 +119,15 @@
 
 .text-decoration:hover {
   text-decoration: none;
+}
+
+
+.rating {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 4px;
+  margin: 0px;
+  font-size: 12px;
 }
 

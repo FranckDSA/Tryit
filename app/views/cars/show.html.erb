@@ -1,8 +1,21 @@
 <%= render 'shared/navbar-fixed' %>
 <div class="container p-3">
   <div class="card-title">
-    <h1><%= @car.brand %> - <%= @car.model %></h1>
-    <p><%= @car.address %></p>
+    <div class="card-description">
+      <h1><%= @car.brand %> - <%= @car.model %></h1>
+      <p><%= @car.address %></p>
+    </div>
+    <div class="card-rating">
+      <h3><%= @average_rating.to_i %>.0
+      <% @average_rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+          <% end %>
+        <% (5 - @average_rating.to_i).times do %>
+          <i class="far fa-star"></i>
+        <% end %><em>
+        <p style= "text-align: right;">(<%= @reviews.count %> rides)</p></em>
+      </h3>
+    </div>
   </div>
   <div class="photo-description d-flex">
       <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
@@ -49,4 +62,23 @@
       </div>
     </div>
   </div>
+
+  <h2 style="text-align: center">Reviews</h2>
+
+  <div class="reviews">
+    <% @reviews.each do |review| %>
+    <div class="review">
+        <p><strong><%= review.user.first_name %> <%= review.user.last_name %> - </strong>
+        <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+          <i class="far fa-star"></i>
+        <% end %> | " <%= review.content %> "</p>
+    <% end %>
+     </div>
+ </div>
 </div>
+
+
+
