@@ -1,3 +1,37 @@
+.item-a {
+  grid-area: photo1;
+}
+
+.item-b {
+  grid-area: photo2;
+}
+
+.item-c {
+  grid-area: photo3;
+}
+
+.item-d {
+  grid-area: photo4;
+}
+
+.item-e {
+  grid-area: photo5;
+}
+
+.test {
+  display: grid;
+  grid-template-columns:  50px 50px 50px 50px;
+  // flex-grow: 1;
+  // grid-gap: 13px;
+  // padding-left: 13px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "photo1 photo1 photo2 photo3"
+    "photo1 photo1 photo4 photo5";
+}
+
+
+
 .card-title {
   font-size: 24px;
 }
