@@ -3,32 +3,34 @@
 <div class="cards-list">
   <div class="cards">
     <% @cars.each do |car|%>
+    <%= link_to car_path(car), class:"text-decoration" do %>
       <% if car.photos.attached? %>
         <div class="card" style="background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), url('<%= cl_image_path car.photos.first.key, :cloud_name => "dcbecmbrj", crop: :fill %>')">
       <% else %>
         <div class="card">
       <% end %>
-        <%= link_to car.brand, car_path(car), class: "card-text" %>
-        <% case car.category %>
-        <% when "Family" %>
-          <p class="card-category" id="family"><em><%= car.category %></em></p>
-        <% when "Sports" %>
-          <p class="card-category" id="sports"><em><%= car.category %></em></p>
-        <% when "Urban" %>
-          <p class="card-category" id="urban"><em><%= car.category %></em></p>
-        <% when "Vintage" %>
-          <p class="card-category" id="vintage"><em><%= car.category %></em></p>
-        <% when "Exotic" %>
-          <p class="card-category" id="exotic"><em><%= car.category %></em></p>
-        <% end %>
-        <div class="price">
-          <p><%= car.daily_rent_price %>€ / day</p>
+          <div class="card-text"><%= car.brand %></div>
+          <% case car.category %>
+            <% when "Family" %>
+              <p class="card-category" id="family"><em><%= car.category %></em></p>
+            <% when "Sports" %>
+              <p class="card-category" id="sports"><em><%= car.category %></em></p>
+            <% when "Urban" %>
+              <p class="card-category" id="urban"><em><%= car.category %></em></p>
+            <% when "Vintage" %>
+              <p class="card-category" id="vintage"><em><%= car.category %></em></p>
+            <% when "Exotic" %>
+              <p class="card-category" id="exotic"><em><%= car.category %></em></p>
+            <% end %>
+          <div class="price">
+            <p><%= car.daily_rent_price %>€ / day</p>
+          </div>
         </div>
-
-      </div>
+    <% end %>
     <% end %>
   </div>
   <div id="map"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
