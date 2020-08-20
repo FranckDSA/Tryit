@@ -17,7 +17,7 @@
     <div class="search-bar">
       <%= simple_form_for :car, url: cars_path, defaults: {label: false}, method: "GET" do |f| %>
         <%= f.input :address, placeholder: "Discover cars around me", input_html: {id:"address"} %>
-        <%= f.input :category, label: '', :collection => ["Family", "Sports", "Urban", "Vintage", "Exotic"], :as => :check_boxes, :input_html => {:name => "search[category][]", :multiple => true} , :id => "car_category", :class => "checkbox-inline"%>
+        <%= f.input :category, label: '', :collection => ["Family", "Sports", "Urban", "Vintage", "Exotic"], :as => :check_boxes, :input_html => {:name => "search[category][]", :multiple => true, :checked => true} , :id => "car_category", :class => "checkbox-inline"%>
         <%= f.submit "Search", class: "button-search" %>
       <% end %>
     </div>
