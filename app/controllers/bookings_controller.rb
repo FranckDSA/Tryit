@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @review = Review.new
+    # @start = DateTime.strptime(@booking.start_time, "%Y-%m-%d %H:%M:%S")
+    # @end = DateTime.strptime(@booking.end_time, "%Y-%m-%d %H:%M:%S")
+    @book_hours = ((@booking.end_time - @booking.start_time) / 3600).round
+    @price = @book_hours * @booking.car.daily_rent_price
   end
 
   def create
