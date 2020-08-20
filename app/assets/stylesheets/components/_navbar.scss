@@ -8,23 +8,23 @@
 
 .navbar-lewagon-white {
   background-color: white;
-  a {
-    color: $logo-color !important;
+  .brand a {
+  color: $logo-color !important;
   }
   .fa-car-side {
     color: $logo-color;
   }
   .cartouche {
-    border: 2px $logo-color solid !important;
+    border: 2px $logo-color-L solid !important;
     background-color: white;
 
   }
   .nav-item .fa-sign-in-alt {
-    color: $logo-color;
+    color: $logo-color-L !important;
   }
 
   .nav-item .fa-solar-panel {
-    color: $logo-color;
+    color: $logo-color-L !important;
   }
 
 }

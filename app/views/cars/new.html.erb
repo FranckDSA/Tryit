@@ -1,38 +1,73 @@
 <%= render 'shared/navbar-fixed' %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url('<%= cl_image_path("banner_pic_v1_wf8hfg") %>')">
+<div class="banner-add-a-car" style="background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url('<%= cl_image_path("IMG_0297_vdg9vj") %>')">
+  <%= simple_form_for [@user, @car] do |f| %>
   <div class="container">
-        <%= simple_form_for [@user, @car] do |f| %>
-
-
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :daily_rent_price %>
-        <%= f.input :sell_price %>
+    <div class="head">
+      <h1>ADD A NEW CAR TO TRY</h1>
+      <h2><%= f.submit "Add a new car", class: "button_a" %></h2>
+    </div>
 
     <div class="row">
       <div class="col">
         <div class="input-area">
-        <%= f.input :model, placeholder: "Scenic" %>
-        <%= f.input :brand, placeholder: "Renault" %>
-        <%= f.input :motorizing, placeholder: "2.0 DCi" %>
-        <%= f.input :description, placeholder: "Description of my car" %>
+          <h1>All we need to know:</h1>
+          <div class="field">
+            <%= f.input :model,label: 'Your model please', placeholder: "Scenic" %>
+            <i class="fas fa-car-side"></i>
+          </div>
+            <%= f.input :brand, placeholder: "Renault" %>
+            <%= f.input :motorizing, placeholder: "2.0 DCi" %>
         </div>
 
       </div>
       <div class="col">
         <div class="input-area">
-          <%= f.select :category, options_for_select(["Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
+          <h1>Key information :</h1>
+          <div class="field">
+            Car category
+            <%= f.select :category, options_for_select(["Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
+          </div>
+          <div class="field">
+            <%= f.input :sell_price, label: 'Selling price (in Euros)'%>
+            <i class="fas fa-euro-sign"></i>
+          </div>
+          <div class="field">
+            <%= f.input :daily_rent_price, label: 'Cost per "Tryit!" day (in Euro):', placeholder: "...0,1% of selling price recommended"%>
+            <i class="fas fa-euro-sign"></i>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
+      <div class="col">
+        <div class="input-area">
+          <h1>Car availability :</h1>
+          <div class="field">
+            <i class="fas fa-play-circle"></i>
+            <%= f.input :start_date, input_html: {class: "datepicker"}, as: :string %>
+          </div>
+          <div class="field">
+            <i class="fas fa-stop-circle"></i>
+            <%= f.input :end_date, input_html: {class: "datepicker"}, as: :string %>
+          </div>
+          <div class="field">
+            <%= f.input :address, label: 'Where to try the car', placeholder: "The car address" %>
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-area">
+          <h1>Show us your car !!</h1>
+            <%= f.input :description, placeholder: "Description of my car" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        </div>
+
+      </div>
     </div>
-        <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
+
         <% end %>
   </div>
 </div>
