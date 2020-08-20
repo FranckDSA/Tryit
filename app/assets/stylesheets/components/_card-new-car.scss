@@ -1,5 +1,94 @@
+
+.banner-add-a-car > .container > h1 {
+  color: $dark-D;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.head {
+  justify-content: space-between;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px $light-M solid;
+  margin: 5px;
+    h1 {
+    color: $dark-D;
+    font-weight: bolder;
+    //font-size: 32px;
+    }
+  }
+
+  .field {
+    justify-content: space-around;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+      .fas {
+        font-size: 32px;
+        color: $dark-L;
+        margin-right: 10px;
+      }
+      .form-control {
+        width: 400px;
+        margin-right: 20px;
+      }
+      #car_category {
+        width: 300px;
+        margin: 10px 10px;
+        padding: 10px;
+      }
+  }
+
 .input-area {
   margin: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px $light-L solid;
+  // height: 100%;
+  h1 {
+    color: $dark-M;
+    font-weight: bolder;
+    font-size: 32px;
+    }
+}
+
+.price {
+  font-weight: 700;
+  color: $light;
+}
+
+.category {
+  color: rgba(0, 0, 0, 0.7)
+}
+
+.button_a {
+  padding: 10px;
+  color: white;
+  background-color: $dark-M;
+  font-weight: 700;
   border-radius: 5px;
+  border: 1px $light-M solid;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.5);
+  &:hover {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+  }
+}
+
+.button_n {
+  padding: 10px;
+  color: $light-L;
   background-color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 2px $light solid;
+  &:hover {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+  }
 }
