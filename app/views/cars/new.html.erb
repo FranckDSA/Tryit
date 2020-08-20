@@ -1,18 +1,38 @@
 <%= render 'shared/navbar-fixed' %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <%= simple_form_for [@user, @car] do |f| %>
-      <%= f.input :model, placeholder: "Scenic" %>
-      <%= f.input :brand, placeholder: "Renault" %>
-      <%= f.input :motorizing, placeholder: "2.0 DCi" %>
-      <%= f.input :description, placeholder: "Description of my car" %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
-      <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url('<%= cl_image_path("banner_pic_v1_wf8hfg") %>')">
+  <div class="container">
+        <%= simple_form_for [@user, @car] do |f| %>
+
+
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :daily_rent_price %>
+        <%= f.input :sell_price %>
+
+    <div class="row">
+      <div class="col">
+        <div class="input-area">
+        <%= f.input :model, placeholder: "Scenic" %>
+        <%= f.input :brand, placeholder: "Renault" %>
+        <%= f.input :motorizing, placeholder: "2.0 DCi" %>
+        <%= f.input :description, placeholder: "Description of my car" %>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="input-area">
+          <%= f.select :category, options_for_select(["Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
+        </div>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+        <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
+        <% end %>
   </div>
 </div>
