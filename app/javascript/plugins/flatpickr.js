@@ -2,7 +2,8 @@ import flatpickr from "flatpickr";
 
 const datepicker = () => {
   flatpickr(".datepicker", {
-    enableTime: true
+    enableTime: true,
+    minDate: Date.now()
   });
 }
 
