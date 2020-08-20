@@ -17,7 +17,7 @@
 }
 
 #photos {
-  width: 40%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex-grow: 1;
@@ -28,7 +28,7 @@
 .car-photos {
   border-radius: 10px;
   background-size: cover;
-  height: 48%;
+  height: 100%;
 }
 
 
