@@ -19,6 +19,19 @@ class CarsController < ApplicationController
         image_url: helpers.asset_url('https://lh3.googleusercontent.com/dtFuCbfBxODq263Ramrmu-7jXxjsdL2YdyXA243PtwLr2U5xOAaUi63FwSgDRKuNTXCyPEyghjW-D2EVlfjnp4HU')
       }
     end
+
+    location = Geocoder.search(params[:car][:address])
+    lat = location[0].latitude
+    lng = location[0].longitude
+
+    @marker = {
+      lat: lat,
+      lng: lng,
+      image_url: helpers.asset_url('https://www.google.com/search?q=pin+carte&sxsrf=ALeKk01ain_A2piFfibHjVfLfGPleJHkCw:1597936357894&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjGkfHniKrrAhVs8OAKHanfCCIQ_AUoAXoECAwQAw&biw=1294&bih=637#imgrc=MKVc1Q5fQGgjRM')
+    }
+
+    @markers << @marker
+
   end
 
   def show
