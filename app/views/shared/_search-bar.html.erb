@@ -15,15 +15,9 @@
 <div class="container">
   <div class="row">
     <div class="search-bar">
-      <%= simple_form_for :car, url: cars_path, method: "GET" do |f| %>
-        <%= f.input :address, placeholder: "Discover cars around me" %>
-        <%#= f.select :category, options_for_select(["All categories", "Family", "Sports", "Urban", "Vintage", "Exotic"]), class: "card-search-selection"%>
-        <%= f.input :category, :label => "Categorie", :collection => ["All categories", "Family", "Sports", "Urban", "Vintage", "Exotic"], :include_blank => "Anything", :as => :check_boxes, :input_html => {:name => "search[category][]", :multiple => true} %>
-        <%#= f.radio_button :category, :label => "Categorie", :collection => ["All categories", "Family", "Sports", "Urban", "Vintage", "Exotic"], :include_blank => "Anything", :as => :radio_buttons, :input_html => {:name => "search[category][]", :multiple => true} %>
-        <%# categories = ["All categories", "Family", "Sports", "Urban", "Vintage", "Exotic"] %>
-        <%# categories.each do |cat| %>
-        <%#= f.check_box :cat, :label => "test", {multipe: true}, cat%>
-        <%# end %>
+      <%= simple_form_for :car, url: cars_path, defaults: {label: false}, method: "GET" do |f| %>
+        <%= f.input :address, placeholder: "Discover cars around me", input_html: {id:"address"} %>
+        <%= f.input :category, label: '', :collection => ["Family", "Sports", "Urban", "Vintage", "Exotic"], :as => :check_boxes, :input_html => {:name => "search[category][]", :multiple => true} , :id => "car_category", :class => "checkbox-inline"%>
         <%= f.submit "Search", class: "button-search" %>
       <% end %>
     </div>

@@ -1,7 +1,7 @@
 .search-bar {
   padding: 5px;
   border-radius: 20px;
-  width: 250px;
+  width: 539px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,22 @@
   padding: 5px;
 }
 
-#car_category_all_categories {
-  background-color: red;
+.car_category legend {
+  display: none;
+}
+
+.car_category label {
+  display: inline-block;
+}
+
+.car_category .form-check {
+    position: relative;
+    display: inline-block;
+        padding-right: 1.25rem;
+}
+
+#address {
+  position: relative;
+    vertical-align: top;
+    margin-top: 11px;
 }
