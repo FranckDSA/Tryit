@@ -1,5 +1,4 @@
 <%= render 'shared/navbar-fixed' %>
-
 <div class="container">
   <div class="d-flex justify-content-between">
     <div class="user">
@@ -8,6 +7,7 @@
       <h2><%= @user.email %></h2>
       <h4><%= @user.phone_number %></h4>
     </div>
+    <% if @user.cars.presence %>
     <div class="cars">
       <h1>Your cars:</h1>
       <% @cars.each do |car| %>
@@ -21,6 +21,8 @@
       </div>
       <% end %>
     </div>
+    <% end %>
+    <% if @user.bookings.presence %>
     <div class="bookings">
       <h1>Your bookings:</h1>
       <% @bookings.each do |book| %>
@@ -34,5 +36,8 @@
       </div>
       <% end %>
     </div>
+    <% else %>
+      <h6><em>You have no reservations yet</em></h6>
+    <% end %>
   </div>
 </div>
