@@ -101,3 +101,19 @@
   }
 }
 
+.price {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 4px;
+  margin: 0px;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.4)
+}
+
+.price p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+}
+
