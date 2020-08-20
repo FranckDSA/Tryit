@@ -5,21 +5,16 @@
     <p><%= @car.address %></p>
   </div>
   <div class="photo-description d-flex">
-    <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
-    <div id="photos">
-      <%= cl_image_tag @car.photos.second.key, class: "car-photos" %>
-      <%= cl_image_tag @car.photos.third.key, class: "car-photos" %>
-      <%= cl_image_tag @car.photos.fourth.key, class: "car-photos" %>
-      <%= cl_image_tag @car.photos.fifth.key, class: "car-photos" %>
-    </div>
+      <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
+
+      <% unless @car.photos[1..-1].length == 0 %>
+        <div id="photos">
+        <% @car.photos[1..-1].each do |photo| %>
+            <%= cl_image_tag photo.key, class: "car-photos" %>
+        <% end %>
+        </div>
+      <% end %>
   </div>
-  <!-- <div class="test">
-    <%= cl_image_tag @car.photos.first.key, class: "item-a" %>
-    <%= cl_image_tag @car.photos.second.key, class: "item-b" %>
-    <%= cl_image_tag @car.photos.third.key, class: "item-c" %>
-    <%= cl_image_tag @car.photos.fourth.key, class: "item-d" %>
-    <%= cl_image_tag @car.photos.fifth.key, class: "item-e" %>
-  </div> -->
   <div class="description">
     <div class="car-description py-3">
       <div class="owner">
