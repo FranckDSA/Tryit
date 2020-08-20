@@ -8,7 +8,7 @@
       <%= f.input :brand, placeholder: "Renault" %>
       <%= f.input :motorizing, placeholder: "2.0 DCi" %>
       <%= f.input :description, placeholder: "Description of my car" %>
-      <%= f.input :photos, as: :files %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.submit "Add a new car to try", class: "btn btn-primary" %>
