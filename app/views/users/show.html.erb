@@ -32,6 +32,7 @@
           <h6 class="card-subtitle mb-2 text-muted"><%= book.car.brand %></h6>
           <p class="card-text">Owner: <%= book.car.user.first_name %></p>
           <%= link_to "The car", car_path(book.car), class: "btn btn-primary" %>
+          <%= link_to "Look the booking", car_booking_path(book), class: "btn btn-primary" %>
         </div>
       </div>
       <% end %>

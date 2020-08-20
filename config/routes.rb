@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :cars, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show]
   end
 
 
