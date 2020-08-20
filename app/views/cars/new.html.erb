@@ -45,16 +45,15 @@
         <div class="input-area">
           <h1>Car availability :</h1>
           <div class="field">
+            <%= f.input :address, label: 'Where to try the car', placeholder: "The car address" , input_html: {id:"address"} %>
+          </div>
+          <div class="field">
             <i class="fas fa-play-circle"></i>
             <%= f.input :start_date, input_html: {class: "datepicker"}, as: :string %>
           </div>
           <div class="field">
             <i class="fas fa-stop-circle"></i>
             <%= f.input :end_date, input_html: {class: "datepicker"}, as: :string %>
-          </div>
-          <div class="field">
-            <%= f.input :address, label: 'Where to try the car', placeholder: "The car address" %>
-            <i class="fas fa-map-marker-alt"></i>
           </div>
         </div>
       </div>
