@@ -11,7 +11,7 @@ require 'date'
 
 Faker::Config.locale = :fr
 
-puts "Destroying tables...."
+puts "Destroying tables..."
 
 Car.destroy_all
 User.destroy_all
@@ -46,18 +46,33 @@ addresses = [
 "15 Avenue de Choisy, 75013 Paris",
 "61 Rue de l'Amiral Mouchez, 75013 Paris",
 "2 Place Jacques Marette, 75015 Paris",
-"170 Place de la Bataille de Stalingrad, 92130 Issy-les-Moulineaux",
+"18 Rue de Paradis, 75010 Paris",
 "53 Rue de la Saussière, 92100 Boulogne-Billancourt",
 "2 Rue Louis Boilly, 75016 Paris",
 "75 Avenue des Champs-Élysées, 75008 Paris",
 "16 Rue Chaptal, 75009 Paris",
-"14 Bis Rue Sainte-Isaure, 75018 Paris"
+"14 Bis Rue Sainte-Isaure, 75018 Paris",
+"27 Boulevard de la Villette, 75010 Paris",
+"20 Cour des Petites Écuries, 75010 Paris",
+"49 Rue de la Folie Méricourt, 75011 Paris",
+"Square de la Tour Saint-Jacques, 75004 Paris",
+"34 Quai d'Austerlitz, 75013 Paris",
+"8 Boulevard du Palais, 75001 Paris",
+"Place Charles de Gaulle, 75008 Paris",
+"47 Rue de Ponthieu, 75008 Paris",
+"19 Boulevard de la Tour-Maubourg, 75007 Paris",
+"13 Rue Bosio, 75016 Paris",
+"75 Avenue Jean Baptiste Clement, 92100 Boulogne-Billancourt",
+"136 Avenue Félix Faure, 75015 Paris",
+"46 Boulevard du Montparnasse, 75015 Paris",
+"139 Boulevard de Grenelle, 75015 Paris",
+"47 Rue des Couronnes, 75020 Paris"
 ]
 
 
 categories.each do |category|
 
-6.times do
+9.times do
 
   puts "Je demande un P..."
 
@@ -133,7 +148,7 @@ categories.each do |category|
   car.photos.attach(io: file_car5, filename: 'car.jpg', content_type: 'image/jpg')
   car.save!
 
-  puts "Allez Paris!!!!!! Oui monsieur....."
+  puts "PARIS! oui monsieur!"
   end
 end
 
