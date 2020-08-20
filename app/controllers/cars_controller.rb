@@ -2,9 +2,9 @@ class CarsController < ApplicationController
   def index
     @cars = Car.geocoded
     if params[:search][:category]
-      @cars = Car.where("category in ('#{params[:search][:category].join("','")}')").near(params[:car][:address], 10)
+      @cars = Car.where("category in ('#{params[:search][:category].join("','")}')").near(params[:car][:address], 5)
     else
-      @cars = Car.all.near(params[:car][:address], 1)
+      @cars = Car.all.near(params[:car][:address], 5)
     end
 
     @markers = @cars.map do |car|
