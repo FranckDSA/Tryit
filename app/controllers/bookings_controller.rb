@@ -1,9 +1,8 @@
 class BookingsController < ApplicationController
 
   def new
-    @booking = Booking.new
-    @car = Car.find(params[:car_id])
-
+    # @booking = Booking.new
+    # @car = Car.find(params[:car_id])
   end
 
   def create
@@ -14,7 +13,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to car_path(@car), notice: "You booked this car !"
     else
-      render :new, alert: "Error !"
+      redirect_to car_path(@car), alert: "Error !"
     end
   end
 

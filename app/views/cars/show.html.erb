@@ -1,33 +1,32 @@
 <%= render 'shared/navbar-fixed' %>
-
 <div class="container p-3">
   <div class="card-title">
     <h1><%= @car.brand %> - <%= @car.model %></h1>
     <p><%= @car.address %></p>
   </div>
   <div class="photo-description d-flex">
-      <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
-      <div id="photos">
-        <%= cl_image_tag @car.photos.second.key, class: "car-photos" %>
-        <%= cl_image_tag @car.photos.third.key, class: "car-photos" %>
-        <%= cl_image_tag @car.photos.fourth.key, class: "car-photos" %>
-        <%= cl_image_tag @car.photos.fifth.key, class: "car-photos" %>
-      </div>
+    <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
+    <div id="photos">
+      <%= cl_image_tag @car.photos.second.key, class: "car-photos" %>
+      <%= cl_image_tag @car.photos.third.key, class: "car-photos" %>
+      <%= cl_image_tag @car.photos.fourth.key, class: "car-photos" %>
+      <%= cl_image_tag @car.photos.fifth.key, class: "car-photos" %>
+    </div>
   </div>
   <!-- <div class="test">
-      <%= cl_image_tag @car.photos.first.key, class: "item-a" %>
-      <%= cl_image_tag @car.photos.second.key, class: "item-b" %>
-      <%= cl_image_tag @car.photos.third.key, class: "item-c" %>
-      <%= cl_image_tag @car.photos.fourth.key, class: "item-d" %>
-      <%= cl_image_tag @car.photos.fifth.key, class: "item-e" %>
+    <%= cl_image_tag @car.photos.first.key, class: "item-a" %>
+    <%= cl_image_tag @car.photos.second.key, class: "item-b" %>
+    <%= cl_image_tag @car.photos.third.key, class: "item-c" %>
+    <%= cl_image_tag @car.photos.fourth.key, class: "item-d" %>
+    <%= cl_image_tag @car.photos.fifth.key, class: "item-e" %>
   </div> -->
   <div class="description">
     <div class="car-description py-3">
       <div class="owner">
         <div class="owner-name">
-        <h2><%= @car.user.first_name%> <%= @car.user.last_name %></h2>
-        <p><%= @car.user.email %></p>
-        <p><%= @car.user.phone_number %></p>
+          <h2><%= @car.user.first_name%> <%= @car.user.last_name %></h2>
+          <p><%= @car.user.email %></p>
+          <p><%= @car.user.phone_number %></p>
         </div>
         <p><%= cl_image_tag @car.user.photo.key, class: "avatar-user" %></p>
       </div>
@@ -36,23 +35,23 @@
           <i class="fas fa-car-alt"></i><p class="px-3"><%= @car.model %> - <%= @car.brand %></p>
         </div>
         <div class="d-flex justify-content-start align-items-baseline">
-        <i class="fas fa-cogs"></i><p class="px-3"><%= @car.motorizing %></p>
+          <i class="fas fa-cogs"></i><p class="px-3"><%= @car.motorizing %></p>
         </div>
       </div>
       <div class="description py-3">
         <p><%= @car.description %></p>
       </div>
     </div>
-
     <div class="car-booking d-flex justify-content-center align-items-center">
-      <%= link_to "Book this car", new_car_booking_path(@car), class:"btn btn-primary" %>
+      <div class="container">
+        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+          <%= simple_form_for [@car, @booking] do |f| %>
+          <%= f.input :start_time, input_html: {class: "datepicker"}, as: :string %>
+          <%= f.input :end_time, input_html: {class: "datepicker"}, as: :string %>
+          <%= f.button :submit, "Book it !", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-
-
 </div>
-
-<!-- <h2>Owner: <%= @car.user.first_name %></h2>
-
-
- -->
