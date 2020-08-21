@@ -11,37 +11,37 @@
   align-items: center;
   border-bottom: 1px $light-M solid;
   margin: 5px;
-    h1 {
-    color: $dark-D;
-    font-weight: bolder;
-    //font-size: 32px;
-    }
+  h1 {
+  color: $dark-D;
+  font-weight: bolder;
+  //font-size: 32px;
   }
+}
 
-  .field {
-    justify-content: flex-start;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    margin: 5px 0px;
-      .fas {
-        font-size: 32px;
-        color: $dark-L;
-        margin-right: 10px;
-      }
-      .form-control {
-        width: 400px;
-        margin-right: 20px;
-      }
-      #car_category {
-        width: 300px;
-        margin: 18px 10px;
-        padding: 10px;
-      }
-      label {
-        font-weight: 700;
+.field {
+  justify-content: flex-start;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+  .fas {
+    font-size: 32px;
+    color: $dark-L;
+    margin-right: 10px;
   }
+  .form-control {
+    width: 400px;
+    margin-right: 20px;
   }
+  #car_category {
+    width: 300px;
+    margin: 18px 10px;
+    padding: 10px;
+  }
+  label {
+    font-weight: 700;
+  }
+}
 
 .input-area {
   margin: 5px;
@@ -94,3 +94,4 @@
     opacity: 0.8;
   }
 }
+
