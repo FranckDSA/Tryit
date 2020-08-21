@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
 
     @booking.user = current_user
     @booking.car = @car
-    if @booking.save
+    if @booking.valid? && @booking.end_time > @booking.start_time
+      @booking.save
       redirect_to car_path(@car), notice: "You booked this car !"
     else
       redirect_to car_path(@car), alert: "Error, please try again!"
