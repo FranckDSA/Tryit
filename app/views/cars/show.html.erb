@@ -13,7 +13,7 @@
         <% (5 - @average_rating.to_i).times do %>
           <i class="far fa-star"></i>
         <% end %><em>
-        <p style= "text-align: right;">(<%= @reviews.count %> rides)</p></em>
+        <p style= "text-align: right;">(<%= pluralize @car.reviews.size, "ride" %>)</p></em>
       </h3>
     </div>
   </div>
