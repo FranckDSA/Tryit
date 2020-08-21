@@ -3,6 +3,8 @@
 <div class="banner-dashboard">
   <div class="row">
     <div class="container-dashboard">
+
+
       <div class="col-1 left-side">
         <div class="cart-c">
           <%= link_to "", new_user_session_path, class: "fas fa-sign-in-alt" %>
@@ -19,19 +21,16 @@
       </div>
 
 
-
-
-
       <div class="col-8 center">
         <div class="title-d-c">
-          <h6>My indicators:</h6>
+          <h6>My indicators :</h6>
         </div>
         <div class="kpm-area">
           <div class="metric-a">
             <% if @user.cars.presence %>
               <h1><%= @user.cars.size %></h1>
             <% end %>
-            <h2>cars in your gararge</h2>
+            <h2>cars in your garage</h2>
           </div>
           <div class="metric-a">
             <h1>2</h1>
@@ -43,14 +42,67 @@
           </div>
         </div>
 
-
+      <% if @user.bookings.presence %>
         <div class="title-d-c">
-          <h6>My bookings:</h6>
+          <h6>My upcoming bookings ( <%= @bookings.size %> ) :</h6>
+        </div>
+        <div class="kpm-area">
+
+            <% @bookings.each do |book| %>
+              <div class="booking-a">
+                  <div class= "cart-h-b">
+                    <div class="try-date" >
+                      <p> <%=book.start_time.strftime("%d/%m/%Y")%></p>
+                      <p> <%=book.start_time.strftime("at: %I:%M%p")%></p>
+                    </div>
+                    <div class="try-date-r" >
+                      <p> <%=book.end_time.strftime("%d/%m/%Y")%></p>
+                      <p> <%=book.end_time.strftime("at: %I:%M%p")%></p>
+                    </div>
+                  </div>
+
+                  <div><%= cl_image_tag book.car.photos.first.key, height: 120 %> </div>
+                  <div class="title-d">
+                    <h6>THE CAR</h6>
+                  </div>
+                  <div class="field-d">
+                    <h6>Model :</h6>
+                    <p><%= book.car.model %></p>
+                  </div>
+                  <div class="field-d">
+                    <h6>Brand :</h6>
+                    <p><%= book.car.brand %></p>
+                  </div>
+                  <div class="title-d">
+                    <h6>OWNER</h6>
+                  </div>
+                  <div class="field-d">
+                    <h6>Name :</h6>
+                    <p><%= book.car.user.first_name%></p>
+                  </div>
+                  <div class="field-d">
+                    <h6>Phone :</h6>
+                    <p><%= book.car.user.phone_number %></p>
+                  </div>
+                  <div class="title-d">
+                    <h6>PRICE</h6>
+                  </div>
+                  <div class="field-d">
+                    <h6>Cost for the Try :</h6>
+                    <p><%= book.price %>€</p>
+                  </div>
+                  <div class="cart-h-b">
+                    <div class="btn-edit"> <%= link_to "Edit", car_booking_path(book) %> </div>
+                    <div class="btn-show"> <%= link_to "Show", car_path(book.car) %> </div>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
-      <div class="col-3 right-side">
 
+      <div class="col-3 right-side">
         <div class="my-info">
           <div class="cart-h">
             <i class="fas fa-bell"></i>
@@ -69,7 +121,7 @@
         </div>
 
         <div class="title-d">
-          <h6>My personal info:</h6>
+          <h6>My personal info :</h6>
         </div>
         <div class="field-d">
           <h6>username :</h6>
@@ -86,7 +138,7 @@
         </div>
 
         <div class="title-d">
-          <h6>My cars:</h6>
+          <h6>My cars :</h6>
           <% if @user.cars.presence %>
           <div class="nbr-car"><%= @user.cars.size %></div>
         </div>
@@ -117,22 +169,3 @@
     </div>
   </div>
 </div>
-
-<% if @user.bookings.presence %>
-  <div class="bookings">
-    <h1>Your bookings:</h1>
-    <% @bookings.each do |book| %>
-      <div class="card-booking" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= book.car.model %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= book.car.brand %></h6>
-          <p class="card-text">Owner: <%= book.car.user.first_name %></p>
-          <p><%= book.price %>€</p>
-          <%= link_to "The car", car_path(book.car), class: "btn btn-primary" %>
-          <%= link_to "Look the booking", car_booking_path(book), class: "btn btn-primary" %>
-        </div>
-    </div>
-    <% end %>
- <% else %>
-    <h6><em>You have no reservations yet</em></h6>
- <% end %>
