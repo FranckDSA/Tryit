@@ -109,14 +109,16 @@ categories.each do |category|
       motorizing: Faker::Vehicle.engine,
       description:Faker::Vehicle.standard_specs.join(" | "),
       address: addresses[0],
-      start_date: Date.new,
-      end_date: Faker::Date.forward(days: 23),
+      start_date: Faker::Date.backward(days: 2),
+      end_date: Faker::Date.forward(days: 10),
       user_id: user.id,
       sell_price: price,
-      daily_rent_price: (price*0.005).round
+      daily_rent_price: (price*0.0005).round
   )
 
   addresses.delete_at(0)
+
+  car.save!
 
   puts "Je demande un R..."
 
@@ -151,5 +153,30 @@ categories.each do |category|
   puts "PARIS! oui monsieur!"
   end
 end
+
+users = User.all
+cars = Car.all
+
+puts "ALLEZ ALLEZ ALLEZ"
+
+users.each do |user|
+  user_identifiant = user.id
+    3.times do
+      booking = Booking.create(
+        start_time: Faker::Date.backward(days: 2),
+        end_time: Faker::Date.forward(days: 2),
+        user_id: user_identifiant,
+        car_id: cars.sample.id
+        )
+
+      review = Review.create(
+        content: Faker::Restaurant.review,
+        rating: rand(2..5),
+        user_id: user_identifiant,
+        booking_id: booking.id
+      )
+    end
+end
+
 
 
