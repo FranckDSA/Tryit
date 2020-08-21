@@ -72,7 +72,7 @@ addresses = [
 
 categories.each do |category|
 
-3.times do
+5.times do
 
   puts "Je demande un P..."
 
