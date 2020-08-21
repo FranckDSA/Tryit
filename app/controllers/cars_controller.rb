@@ -33,7 +33,6 @@ class CarsController < ApplicationController
 
       @markers << @marker
     end
-
   end
 
   def show
