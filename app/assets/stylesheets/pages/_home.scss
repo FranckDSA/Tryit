@@ -42,6 +42,10 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .card-trip-infos .card-trip-user {
@@ -54,3 +58,15 @@
 .card-2trips {
   width: 750px;
 }
+
+div > div > h2 > a {
+  text-decoration: none;
+  color: rgb(97,94,118);
+}
+
+div > div > h2 > a:hover {
+  text-decoration: none;
+  color: rgba(97,94,118,1);
+}
+
+// body > div.container > div.card-trips.d-flex.p-3 > div:nth-child(2) > div > div > h2 > a
