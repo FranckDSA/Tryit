@@ -1,11 +1,18 @@
 <%= render 'shared/navbar-fixed' %>
 <div class="container p-3">
   <div class="card-title">
-    <div class="card-description">
+    <div class="p-2">
+      <a href ="javascript:history.back()">
+        <span style="color: rgb(80,76,103)">
+          <i class="fas fa-undo-alt"></i>
+        </span>
+      </a>
+    </div>
+    <div class="p-2 card-description">
       <h1><%= @car.brand %> - <%= @car.model %></h1>
       <p><%= @car.address %></p>
     </div>
-    <div class="card-rating">
+    <div class="ml-auto p-2 card-rating">
       <h3><%= @average_rating.to_i %>.0
       <% @average_rating.to_i.times do %>
         <i class="fas fa-star"></i>
