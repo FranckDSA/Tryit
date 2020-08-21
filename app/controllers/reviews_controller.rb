@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review.user    = current_user
     @review.booking = @booking
     if @review.save
-      redirect_to user_path(current_user)
+      redirect_to car_path(@booking.car)
     else
       render "bookings/show"
     end
