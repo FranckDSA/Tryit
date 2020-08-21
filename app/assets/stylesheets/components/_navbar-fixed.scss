@@ -75,9 +75,10 @@ font-size: 12px;
 font-weight: lighter;
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   a {
-      padding: 5px;
-      font-size: 14px;
-      font-weight: bolder;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: $dark;
   }
 }
 
