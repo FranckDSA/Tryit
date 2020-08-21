@@ -1,14 +1,73 @@
-<div class="review">
-  <h2>Laissez une évaluation</h2>
+<%= render 'shared/navbar-fixed' %>
+
+<div class="banner-add-a-car" style="background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.7)), url('<%= cl_image_path("IMG_0297_vdg9vj") %>')">
   <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, as: :hidden %>
-    <div class="my-3">
-      <% 5.times do |index| %>
-        <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
-      <% end %>
-    </div>
-    <%= f.submit class: "btn btn-primary", value: "Valider" %>
-  <% end %>
+    <div class="container">
+      <div class="head">
+        <h1>LEAVE A COMMENT</h1>
+        <h2><%= f.submit "Add a Review", class: "button_a"%></h2>
+      </div>
+      <div class="row">
+        <div class="col-3">
+              <div class="booking-b">
+                <div class= "cart-h-b">
+                  <div class="try-date" >
+                    <p> <%=@booking.start_time.strftime("%d/%m/%Y")%></p>
+                    <p> <%=@booking.start_time.strftime("at: %I:%M%p")%></p>
+                  </div>
+                  <div class="try-date-r" >
+                    <p> <%=@booking.end_time.strftime("%d/%m/%Y")%></p>
+                    <p> <%=@booking.end_time.strftime("at: %I:%M%p")%></p>
+                  </div>
+                </div>
+
+                <div><%= cl_image_tag @booking.car.photos.first.key, height: 120 %> </div>
+                <div class="title-d">
+                  <h6>THE CAR</h6>
+                </div>
+                <div class="field-d">
+                  <h6>Model :</h6>
+                  <p><%= @booking.car.model %></p>
+                </div>
+                <div class="field-d">
+                  <h6>Brand :</h6>
+                  <p><%= @booking.car.brand %></p>
+                </div>
+                <div class="title-d">
+                  <h6>OWNER</h6>
+                </div>
+                <div class="field-d">
+                  <h6>Name :</h6>
+                  <p><%= @booking.car.user.first_name%></p>
+                </div>
+                <div class="field-d">
+                  <h6>Phone :</h6>
+                  <p><%= @booking.car.user.phone_number %></p>
+                </div>
+                <div class="title-d">
+                  <h6>PRICE</h6>
+                </div>
+                <div class="field-d">
+                  <h6>Cost for the Try :</h6>
+                  <p><%= @booking.price %>€</p>
+                </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="input-area", style="height: 98%;">
+            <h1>Your review :</h1>
+            <%= f.input :content ,label: 'Your comment'%>
+
+              <p>Your rating</p>
+              <%= f.input :rating, as: :hidden %>
+              <div class="my-3">
+                <% 5.times do |index| %>
+                  <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
+                <% end %>
+              </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
 

@@ -44,10 +44,9 @@
 
       <% if @user.bookings.presence %>
         <div class="title-d-c">
-          <h6>My upcoming bookings ( <%= @bookings.size %> ) :</h6>
+          <h6>My bookings ( <%= @bookings.size %> ) :</h6>
         </div>
         <div class="kpm-area">
-
             <% @bookings.each do |book| %>
               <div class="booking-a">
                   <div class= "cart-h-b">
@@ -92,8 +91,8 @@
                     <p><%= book.price %>€</p>
                   </div>
                   <div class="cart-h-b">
-                    <div class="btn-edit"> <%= link_to "Edit", car_booking_path(book) %> </div>
                     <div class="btn-show"> <%= link_to "Show", car_path(book.car) %> </div>
+                    <div class="btn-review"> <%= link_to "Add a review", car_booking_path(book) %> </div>
                   </div>
               </div>
             <% end %>
@@ -159,6 +158,28 @@
                   <div class="field-d">
                     <h6>Brand :</h6>
                     <p><%= car.brand %></p>
+                  </div>
+                  <div class="field-d">
+                    <h6>Reviews ( <%=car.reviews.size %> )</h6>
+                    <div class="rating-d">
+                      <% sum = 0 %>
+                      <% car.reviews.each do |review| %>
+                        <% sum += review[:rating] %>
+                      <% end %>
+
+                      <%if car.reviews.size == 0 %>
+                        <% result = sum %>
+                      <% else %>
+                        <% result = sum/car.reviews.size %>
+                      <% end %>
+
+                      <% result.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                      <% (5 - result).times do %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               <% end %>
