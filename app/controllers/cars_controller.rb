@@ -28,7 +28,7 @@ class CarsController < ApplicationController
       @marker = {
         lat: lat,
         lng: lng,
-        image_url: helpers.asset_url('https://www.google.com/search?q=pin+carte&sxsrf=ALeKk01ain_A2piFfibHjVfLfGPleJHkCw:1597936357894&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjGkfHniKrrAhVs8OAKHanfCCIQ_AUoAXoECAwQAw&biw=1294&bih=637#imgrc=MKVc1Q5fQGgjRM')
+        image_url: helpers.asset_url('https://icons-for-free.com/iconfiles/png/512/delorean+fast+fire+transport+transportation+vehicle+icon-1320085992872808233.png')
       }
 
       @markers << @marker

@@ -50,13 +50,17 @@
         <p><%= @car.description %></p>
       </div>
     </div>
-    <div class="car-booking d-flex justify-content-center align-items-center">
-      <div class="container">
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <div class="car-booking d-flex justify-content-center">
+      <div class="container ml-2">
+        <div class="form-wrapper" style="width: 100%; background-color: white;
+        border: 1px solid rgba(0,0,0,0.2); padding:20px 20px; border-radius: 2px;">
+          <h2 style="text-align:center;"><i class="fas fa-car"></i> <strong>Book a car </strong> <i class="fas fa-car"></i></h2>
+          <p style="text-align:center; margin-bottom: 20px"><em>Pick dates for your next ride</em></p>
           <%= simple_form_for [@car, @booking] do |f| %>
-          <%= f.input :start_time, input_html: {class: "datepicker"}, as: :string %>
-          <%= f.input :end_time, input_html: {class: "datepicker"}, as: :string %>
-          <%= f.button :submit, "Book it !", class: "btn btn-primary" %>
+            <%= f.input :start_time, label: "Check-in time", input_html: {class: "datepicker"}, as: :string %>
+            <%= f.input :end_time, label: "Checkout time", input_html: {class: "datepicker"}, as: :string %>
+            <p class="booking-price"><strong>* <%= @car.daily_rent_price %> €<strong> / per day</p>
+            <%= f.button :submit, "Book it !", class: "btn btn-flat"%>
           <% end %>
         </div>
       </div>
