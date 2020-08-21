@@ -12,17 +12,19 @@
       <h1><%= @car.brand %> - <%= @car.model %></h1>
       <p><%= @car.address %></p>
     </div>
-    <div class="ml-auto p-2 card-rating">
-      <h3><%= @average_rating.round(1)%>
-      <% @average_rating.to_i.times do %>
-        <i class="fas fa-star"></i>
-          <% end %>
-        <% (5 - @average_rating.to_i).times do %>
-          <i class="far fa-star"></i>
-        <% end %><em>
-        <p style= "text-align: right;">(<%= pluralize @car.reviews.size, "ride" %>)</p></em>
-      </h3>
-    </div>
+    <% unless @average_rating.nil? %>
+      <div class="ml-auto p-2 card-rating">
+        <h3><%= @average_rating.round(1)%>
+        <% @average_rating.to_i.times do %>
+          <i class="fas fa-star"></i>
+            <% end %>
+          <% (5 - @average_rating.to_i).times do %>
+            <i class="far fa-star"></i>
+          <% end %><em>
+          <p style= "text-align: right;">(<%= pluralize @car.reviews.size, "ride" %>)</p></em>
+        </h3>
+      </div>
+    <% end %>
   </div>
   <div class="photo-description d-flex">
       <%= cl_image_tag @car.photos.first.key, class: "car-photo" %>
