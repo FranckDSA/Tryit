@@ -13,7 +13,7 @@
       <p><%= @car.address %></p>
     </div>
     <div class="ml-auto p-2 card-rating">
-      <h3><%= @average_rating.to_i %>.0
+      <h3><%= @average_rating.round(1)%>
       <% @average_rating.to_i.times do %>
         <i class="fas fa-star"></i>
           <% end %>
@@ -78,16 +78,19 @@
 
   <div class="reviews">
     <% @reviews.each do |review| %>
-    <div class="review">
-        <p><strong><%= review.user.first_name %> <%= review.user.last_name %> - </strong>
-        <% review.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - review.rating).times do %>
-          <i class="far fa-star"></i>
-        <% end %> | " <%= review.content %> "</p>
+      <div class="review">
+          <p>
+            <strong><%= review.user.first_name %> <%= review.user.last_name %> - </strong>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          </p>
+          <p>" <%= review.content %> "</p>
+        </div>
     <% end %>
-     </div>
  </div>
 </div>
 
