@@ -59,7 +59,7 @@
           <%= simple_form_for [@car, @booking] do |f| %>
             <%= f.input :start_time, label: "Check-in time", input_html: {class: "datepicker"}, as: :string %>
             <%= f.input :end_time, label: "Checkout time", input_html: {class: "datepicker"}, as: :string %>
-            <p class="booking-price"><strong>* <%= @car.daily_rent_price %> €<strong> / per day</p>
+            <p class="booking-price"><strong>* <%= @car.daily_rent_price %> €<strong> / per hour</p>
             <%= f.button :submit, "Book it !", class: "btn btn-flat"%>
           <% end %>
         </div>
