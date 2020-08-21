@@ -26,12 +26,12 @@
             <p><%= car.daily_rent_price %>€ / hour</p>
           </div>
           <div class="rating">
-              <% @average_rating.to_i.times do %>
+              <% 4.times do %>
               <i class="fas fa-star"></i>
               <% end %>
-              <% (5 - @average_rating.to_i).times do %>
+              <% (5 - 4).times do %>
                 <i class="far fa-star"></i>
-              <% end %><em>
+              <% end %>
           </div>
         </div>
     <% end %>
@@ -43,3 +43,17 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+
+<div class="container">
+  <% sum = 0 %>
+  <% @cars.each do |car|%>
+  <% car.reviews.each do |review| %>
+    <%= sum += review[:rating] %>
+  <% end %>
+<% end %>
+</div>
+
+
+
+
