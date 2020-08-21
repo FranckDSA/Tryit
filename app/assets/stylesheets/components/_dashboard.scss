@@ -218,13 +218,18 @@ display: flex;
   border-radius: 5%;
   font-size: 12px;
   font-weight: 700;
-  height: 30px;
+  height: 40px;
   width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
     a {
       font-size: 12px;
       font-weight: 700;
       color: white;
       text-decoration: none;
+      margin: 0px;
     }
     &:hover {
       opacity: 0.8;
@@ -241,20 +246,51 @@ display: flex;
   border-radius: 5%;
   font-size: 12px;
   font-weight: 700;
-  height: 30px;
+  height: 40px;
   width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   a {
     font-size: 12px;
     font-weight: 700;
     color: white;
     text-decoration: none;
+    margin: 0px;
   }
   &:hover {
     opacity: 0.8;
   }
 }
 
-
+.btn-review {
+  text-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 10px;
+  color: white;
+  background-color: $logo-color-D;
+  border-radius: 5%;
+  font-size: 12px;
+  font-weight: 700;
+  height: 40px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  a {
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin: 0px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
 .metric-a {
   margin: 10px;
   border-radius: 10px;
@@ -308,6 +344,23 @@ display: flex;
   margin: 10px;
   border-radius: 10px;
   width: 30%;
+  //height: 180px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+}
+
+.booking-b {
+  margin: 5px;
+  border-radius: 10px;
+  //width: 30%;
   //height: 180px;
   border-radius: 10px;
   background-color: white;
