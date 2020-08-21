@@ -1,7 +1,6 @@
 .cards-list {
   display: flex;
   align-items: top;
-
   justify-content: space-around;
   padding: 20px;
 }
@@ -10,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   flex-grow: 1;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .card {
@@ -26,7 +25,6 @@
   justify-content: center;
   font-weight: bolder;
   position: relative;
-  margin-top: 10px;
 }
 
 .card:hover {
